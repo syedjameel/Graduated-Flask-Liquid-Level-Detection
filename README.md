@@ -47,6 +47,19 @@ The reason we choose to work with YOLOv8 is due to the fact that it is the state
 #### 4. Our Algorithm:
 One of the main goals of this research is to detect and measure the liquid level even if the camera is at a particular range of angles with the liquid container, which means we don’t want the angle of the camera to the liquid container to affect our reading of the volume of liquid inside the container. The distortion in the dimensions of the object when observed from a specific angle is known as foreshortening or perspective distortion and it is caused by the changing distances between the object and the camera, as well as the varying viewing angles that affect the projection of the object onto the 2D image plane [].
 
+We developed an Algorithm based on simple geometry, this algorithm is aimed to eliminate any perspective distortions which are bound to occur in a dynamic environment and when the camera is moving. 
+The Algorithm is as follows
+1. Get the **measured_flask_height** of the container (y2-y1) in pixels
+2. **PIXEL_PER_MM_HEIGHT_RATIO** = measured_flask_height/ACTUAL_HEIGHT_OF_FLASK
+3. Get the **measured_width** and **measured_height** of the container
+4. **theta** = arcsin(measured_height/measured_width)
+5. **Apparant_Flask_height** = (measured_flask_height/PIXEL_PER_MM_HEIGHT_RATIO)*cos(theta)
+6. **APPARANT_HEIGHT** (diameter)= ACTUAL_DIAMETER_OF_FLASK * (measured_height/measured_width)
+7. Get the **measured_liquid_height** of the liquid in the container
+8. Height correction due to the model detecting the height of the liquid from the middle of the liquid when the camera is at an angle - > **measured_liquid_height** = measured_liquid_height - (measured_height/2)
+9. **measured_liquid_height_mm** = measured_liquid_height/PIXEL_PER_MM_HEIGHT_RATIO
+10. **ACTUAL_LIQUID_HEIGHT** = measured_liquid_height_mm/np.cos(theta)
+11. **MILLILITER** = (pi *((inner_dia_of_container/2)**2)*ACTUAL_LIQUID_HEIGHT)/1000 + offset
 
 
 
@@ -78,5 +91,3 @@ One of the main goals of this research is to detect and measure the liquid level
 8. Zhang, Z., 2000. [A flexible new technique for camera calibration](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf). IEEE Transactions on pattern analysis and machine intelligence, 22(11),pp.1330-1334. 
 9. [pyrealsense2 2.53.1.4623](https://pypi.org/project/pyrealsense2/)
 10. [opencv-python 4.7.0.72](https://pypi.org/project/opencv-python/)
-
-### We work in the Dark to serve the light, We are ...? pssst. Electricians ;)
