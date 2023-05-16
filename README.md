@@ -61,13 +61,13 @@ The Algorithm is as follows
 10. **ACTUAL_LIQUID_HEIGHT** = measured_liquid_height_mm/np.cos(theta)
 11. **MILLILITER** = (pi *((inner_dia_of_container/2)**2)*ACTUAL_LIQUID_HEIGHT)/1000 + offset
 
-# D. Flow Chart
+## D. Flow Chart
 ![Screenshot](/yolov8_segmentation/images/FlowChart.png)
 
-# E. Experiment
+## E. Experiment
 To implement such a project, it is difficult to experience the prototype directly on the actual chemical tanks. Therefore we design an experience that simulates the real process. Below we will discuss the used devices and how the experience was conducted.
 
-## I. Apparatus:
+### I. Apparatus:
 Our Hardware setup is as shown below
 ![Screenshot](/yolov8_segmentation/images/hardware_setup.jpg)
 
@@ -77,11 +77,14 @@ Our Hardware setup is as shown below
 3. Software: Deep learning model and our Algorithm
 
 
-## II. Procedures:
+### II. Procedures:
 The flask is filled with a certain value of water, this value is to be measured and compared later with the actual to obtain accuracy. After, we place the flask at a given distance and angle from the camera since the model already takes into account the effects of changing  projection of angle and distance. Finally, we monitor the flask through real-time stream and detect the approximated water level in the flask
 
-# F. Results
+## F. Results
+![Screenshot](/yolov8_segmentation/images/result1.png)
 
+
+## G. Conclusion
 
 
 
