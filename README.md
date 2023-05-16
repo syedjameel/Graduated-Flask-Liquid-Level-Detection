@@ -1,14 +1,14 @@
 # Computer Vision and Deep Learning Enabled Real-Time Liquid Level Detection and Measurement in Transparent Containers
 
-## Problem Statement
+## A. Problem Statement
 Laboratories, particularly those in large oil companies, require a fast and reliable system for detecting and  measuring liquid levels in containers. Current manual methods and some of the pure vision based methods are time-consuming, tedious, and prone to errors leading to delays in product development and increased risk of errors. There is a critical need for a fast and reliable system that can detect and measure liquid levels in real-time and improve the efficiency and reducing human errors in laboratory testing procedures. 
 
 Moreover, with the increase in the trend of Industry 4.0 the capability to detect and measure the liquid levels in the transparent flasks/test tubes is a crucial part in the whole perception system of an autonomous robot and by the use of the Computer vision and deeplearning we can easily help solve this problem. The final developed system can be used in various applications across various industries, including pharmaceutical, manufacturing and chemical processing making it a crucial component in the perception system of an autonomous robot in the Industry 4.0. 
 
-## Proposed Solution
+## B. Proposed Solution
 To solve the problem of manual and slow pure vision based liquid level measurement in laboratories [1], we propose to develop an fast and accurate automated system that uses the state-of-the-art deep learning technology [2] to provide accurate and real-time feedback on liquid levels in containers from various viewing angles. The system consists of a realsense d435 camera that collects data [4], which is then analyzed by a state-of-the-art deep learning model and angle correction by devising a novel algorithm to correct the errors in any viewing angle and then to determine the liquid level in real-time. This technology will reduce the risk of errors and increase efficiency in laboratory testing procedures, allowing for faster product development and improved quality control. Additionally, the system can be extended to handle datasets with different types of containers and liquids [3] to ensure its effectiveness across various laboratory testing scenarios. The system will be robot-friendly, with a simple interface that can easily pass the real-time measurement data to the microprocessor to further control a robotic arm to pick up the container which is with appropriate liquid level. Once developed, the system will be tested and optimized to ensure its accuracy and reliability, and can be further enhanced with training heavier deep learning models using different types of containers dataset to improve the accuracy of the liquid level measurement over time.
 
-## Methodology
+## C. Methodology
 This section is divided into 4 main subsections:
 
 ### I. Dataset Creation on Roboflow
@@ -60,6 +60,29 @@ The Algorithm is as follows
 9. **measured_liquid_height_mm** = measured_liquid_height/PIXEL_PER_MM_HEIGHT_RATIO
 10. **ACTUAL_LIQUID_HEIGHT** = measured_liquid_height_mm/np.cos(theta)
 11. **MILLILITER** = (pi *((inner_dia_of_container/2)**2)*ACTUAL_LIQUID_HEIGHT)/1000 + offset
+
+# D. Flow Chart
+![Screenshot](/yolov8_segmentation/images/FlowChart.png)
+
+# E. Experiment
+To implement such a project, it is difficult to experience the prototype directly on the actual chemical tanks. Therefore we design an experience that simulates the real process. Below we will discuss the used devices and how the experience was conducted.
+
+## I. Apparatus:
+Our Hardware setup is as shown below
+![Screenshot](/yolov8_segmentation/images/hardware_setup.jpg)
+
+1. Transparent graduated flask:  With a total volume approximately 1000 ml
+2. Intel Realsense camera: advanced camera for 3d scanning and recognition
+3. Tripod: For fixing camera position at various orientations and distances from the liquid containers
+3. Software: Deep learning model and our Algorithm
+
+
+## II. Procedures:
+The flask is filled with a certain value of water, this value is to be measured and compared later with the actual to obtain accuracy. After, we place the flask at a given distance and angle from the camera since the model already takes into account the effects of changing  projection of angle and distance. Finally, we monitor the flask through real-time stream and detect the approximated water level in the flask
+
+# F. Results
+
+
 
 
 
