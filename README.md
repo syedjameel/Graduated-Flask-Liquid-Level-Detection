@@ -9,12 +9,12 @@ Moreover, with the increase in the trend of Industry 4.0 the capability to detec
 To solve the problem of manual and slow pure vision based liquid level measurement in laboratories [1], we propose to develop an fast and accurate automated system that uses the state-of-the-art deep learning technology [2] to provide accurate and real-time feedback on liquid levels in containers from various viewing angles. The system consists of a realsense d435 camera that collects data [4], which is then analyzed by a state-of-the-art deep learning model and angle correction by devising a novel algorithm to correct the errors in any viewing angle and then to determine the liquid level in real-time. This technology will reduce the risk of errors and increase efficiency in laboratory testing procedures, allowing for faster product development and improved quality control. Additionally, the system can be extended to handle datasets with different types of containers and liquids [3] to ensure its effectiveness across various laboratory testing scenarios. The system will be robot-friendly, with a simple interface that can easily pass the real-time measurement data to the microprocessor to further control a robotic arm to pick up the container which is with appropriate liquid level. Once developed, the system will be tested and optimized to ensure its accuracy and reliability, and can be further enhanced with training heavier deep learning models using different types of containers dataset to improve the accuracy of the liquid level measurement over time.
 
 ## Methodology
-This section is divided into xx subsections:
+This section is divided into 4 main subsections:
 
-### Dataset Creation on Roboflow
+### I. Dataset Creation on Roboflow
 For dataset creation we choose the roboflow platform as it have tools which will make the process of the annotation of the images seemless. We took 214 images of the graduated flask with different liquid levels at various orientations and annotated it on Roboflow[3].
 
-### Training Yolo v8 on our dataset
+### II. Training Yolo v8 on our dataset
 After creating our dataset now it was time to train a large model of  Yolo v8 (yolov8l-seg.pt) with 100 epochs input image size as 640x640 pixels. 
 ![Screenshot](/yolov8_segmentation/images/confusion-matrix.png)
 ![Screenshot](/yolov8_segmentation/images/losses.png)
@@ -23,28 +23,28 @@ After creating our dataset now it was time to train a large model of  Yolo v8 (y
 ![Screenshot](/yolov8_segmentation/images/validation.png)
 ![Screenshot](/yolov8_segmentation/images/instance-seg-merged.jpeg)
 
-### Camera Calibration
+### III. Camera Calibration
 To ensure robust measurements, we have to calibrate our camera’s intrinsic and extrinsic parameters to match their default values. The process of calibration usually requires the aid of a paper with a checkerboard pattern. For this step, we take several photos from different angels of the checkerboard and input them to our application. The idea of using such a pattern in common is that it has sharp corner and is easy to distinct by the camera lens [8].
 ![Screenshot](/yolov8_segmentation/camera_calibration/pattern.png)
 ![Screenshot](/yolov8_segmentation/images/calibration-params.png)
 
  After calibration, we can use the camera parameters to reduce the skew and other artifacts and have a rectified image that can later be used with further computer vision processes. Rectifying the image parameters is a crucial step to do before using the camera. The output of the process reduces the camera to the simple pinhole model, which simplifies the calculations further and enhances the accuracy overall due to correct parameters. 
 
-### Modules/Components
+### IV. Modules/Components
 The project is a synthesis of different units that are prepared and responsible for different tasks each. The target containers mainly consist of liquids that are desired to be monitored through the sensory unit, the camera. The sensory unit monitors the liquid and generates a digital image that is later handed to the detection unit. The unit that handles the detection process is mainly based on a deep learning model. 
 
-#### Liquid Containers:
+#### 1. Liquid Containers:
 The Liquid containers which we are training out model is only for the transparent liquid level containers only, the proposed solution will not work for the liquid level containers which aren't transparent.
 There can be any number of container types but as long as they are transparent then there is not an issue.
 
-#### Sensory System:
+#### 2. Sensory System:
 Given  the variety of camera parameters and the complexity of interfacing it with the computer, choosing the sensory unit is a crucial step as it influences the overall accuracy process. For this application we choose the Intel RealSense D435 camera  due to its pioneering in 3d scanning and detecting facial-features. Furthermore, there is package for python with API for quicker interfacing with python.[9]
 
-#### Deep Learning Model:
+#### 3. Deep Learning Model:
 Deep learning is a powerful tool that utilizes the usage of neural networks to predict and regulate the output model. Recently deep learning has been noticed in many fields, most famous of which is computer vision. Nowadays there are many tools that combine deep learning with computer vision, one of them is YOLOv8.
 The reason we choose to work with YOLOv8 is due to the fact that it is the state-of-the-art model, and faster when it comes to instance segmentation and object detection.
 
-#### Our Algorithm:
+#### 4. Our Algorithm:
 One of the main goals of this research is to detect and measure the liquid level even if the camera is at a particular range of angles with the liquid container, which means we don’t want the angle of the camera to the liquid container to affect our reading of the volume of liquid inside the container. The distortion in the dimensions of the object when observed from a specific angle is known as foreshortening or perspective distortion and it is caused by the changing distances between the object and the camera, as well as the varying viewing angles that affect the projection of the object onto the 2D image plane [].
 
 
