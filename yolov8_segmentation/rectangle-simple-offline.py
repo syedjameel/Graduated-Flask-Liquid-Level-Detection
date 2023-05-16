@@ -35,7 +35,7 @@ while True:
     # Load the image  IMG20230224211106 IMG20230224210532
     # img = cv2.imread("graduated-flask/raw-photos1/IMG20230224211106.jpg")
 
-    scale_percent = 30 # percent of original size
+    scale_percent = 50 # percent of original size
     width = int(img.shape[1] * scale_percent / 100)
     height = int(img.shape[0] * scale_percent / 100)
     dim = (width, height)
