@@ -65,9 +65,10 @@ One of the main goals of this research is to detect and measure the liquid level
 2. Computer Vision (e.g. OpenCV)
 3. Realsense D435 camera
 4. Roboflow
+5. Sprinkle of Geometry and Logic;)
 
 ## References
-1. Ma, H. and Peng, L., 2019, December. Vision based liquid level detection and bubble area segmentation in liquor distillation. In 2019 IEEE International Conference on Imaging Systems and Techniques (IST) (pp.1-6). IEEE.
+1. Ma, H. and Peng, L., 2019, December. [Vision based liquid level detection and bubble area segmentation in liquor distillation](https://ieeexplore.ieee.org/abstract/document/9010097). In 2019 IEEE International Conference on Imaging Systems and Techniques (IST) (pp.1-6). IEEE.
 2. State-of-the-art Deep learning platform [YOLOv8](https://github.com/ultralytics/ultralytics) 
 3. Tool to create Dataset and Annotations [Roboflow](https://app.roboflow.com)
 4. [Realsense depth camera D435](https://www.intelrealsense.com/depth-camera-d435/) 
@@ -77,3 +78,5 @@ One of the main goals of this research is to detect and measure the liquid level
 8. Zhang, Z., 2000. [A flexible new technique for camera calibration](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf). IEEE Transactions on pattern analysis and machine intelligence, 22(11),pp.1330-1334. 
 9. [pyrealsense2 2.53.1.4623](https://pypi.org/project/pyrealsense2/)
 10. [opencv-python 4.7.0.72](https://pypi.org/project/opencv-python/)
+
+### We work in the Dark to serve the light, We are ...? pssst. Electricians ;)
