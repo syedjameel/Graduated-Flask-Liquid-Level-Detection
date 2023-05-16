@@ -16,7 +16,16 @@ For dataset creation we choose the roboflow platform as it have tools which will
 
 ### Training Yolo v8 on our dataset
 After creating our dataset now it was time to train a large model of  Yolo v8 (yolov8l-seg.pt) with 100 epochs input image size as 640x640 pixels. 
-![Screenshot](/yolov8_segmentation/images/confusion-matrix.png, "Confusion Matrix")
+![Screenshot](/yolov8_segmentation/images/confusion-matrix.png)
+![Screenshot](/yolov8_segmentation/images/losses.png)
+![Screenshot](/yolov8_segmentation/images/Epoch-end.png)
+![Screenshot](/yolov8_segmentation/images/Train-end.png)
+![Screenshot](/yolov8_segmentation/images/validation.png)
+![Screenshot](/yolov8_segmentation/images/instance-seg-merged.jpeg)
+
+
+
+
 
 
 
