@@ -82,7 +82,7 @@ The flask is filled with a certain value of water, this value is to be measured 
 
 ## F. Results
 ![Screenshot](/yolov8_segmentation/images/result1.png)
-
+![](/yolov8_segmentation/gifs/demo_liquid_level.gif)
 
 ## G. Conclusion
 
