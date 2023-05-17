@@ -8,6 +8,29 @@ Moreover, with the increase in the trend of Industry 4.0 the capability to detec
 ## B. Proposed Solution
 To solve the problem of manual and slow pure vision based liquid level measurement in laboratories [1], we propose to develop an fast and accurate automated system that uses the state-of-the-art deep learning technology [2] to provide accurate and real-time feedback on liquid levels in containers from various viewing angles. The system consists of a realsense d435 camera that collects data [4], which is then analyzed by a state-of-the-art deep learning model and angle correction by devising a novel algorithm to correct the errors in any viewing angle and then to determine the liquid level in real-time. This technology will reduce the risk of errors and increase efficiency in laboratory testing procedures, allowing for faster product development and improved quality control. Additionally, the system can be extended to handle datasets with different types of containers and liquids [3] to ensure its effectiveness across various laboratory testing scenarios. The system will be robot-friendly, with a simple interface that can easily pass the real-time measurement data to the microprocessor to further control a robotic arm to pick up the container which is with appropriate liquid level. Once developed, the system will be tested and optimized to ensure its accuracy and reliability, and can be further enhanced with training heavier deep learning models using different types of containers dataset to improve the accuracy of the liquid level measurement over time.
 
+1. Classical CV based solution
+   		 Advantages:
+   			 1. Fast, less computational cost
+   			 2. Easy to implement
+   		 DisAdvantages:
+   			 1. Not adaptive
+   			 2. Extensive tuning of thresholds etc
+   			 3. Less effective in different environments
+		
+   	 2. Deep Learning based solution
+   		 Adv:
+   			 1. State-of-the-art performance
+   			 2. They can learn features and representations directly from data
+   			 3. More flexible and adaptable in variations in the objects
+   		 DisAdv:
+   			 1. They require large amount of labeled data to train effectively
+   			 2. Computationally expensive
+   			 3. Prone to over-fitting in-case of noisy data
+   			 4. less likely to understand how they system is making decisions
+   			 5. They may struggle with rare
+		Demo
+
+
 ## C. Methodology
 This section is divided into 4 main subsections:
 
@@ -85,6 +108,7 @@ The flask is filled with a certain value of water, this value is to be measured 
 ![](/yolov8_segmentation/gifs/clear_clipped.gif)
 
 ## G. Conclusion
+In Conclusion, we have firstly tried to detect and measure the liquid level using the classical computer vision approaches and then we used the combination of both classical computer vision based and deep learning based approach which makes the detection and measurement of the liquid level in the flask seamless.
 
 
 
