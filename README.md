@@ -37,10 +37,7 @@ To solve the problem of manual and slow pure vision based liquid level measureme
 - Final detection of liquid
 ![Screenshot](/yolov8_segmentation/images/classical-output.png)
 
-
-
-
-
+  
 
 2. Deep Learning based solution
          Advantages:
@@ -53,7 +50,7 @@ To solve the problem of manual and slow pure vision based liquid level measureme
              3. Prone to over-fitting in-case of noisy data
              4. less likely to understand how they system is making decisions
              5. They may struggle with rare
-     Demo
+     Below is our methodology for the deeplearning model + classical computer vision based == Robust solution
 
 
 ## C. Methodology
