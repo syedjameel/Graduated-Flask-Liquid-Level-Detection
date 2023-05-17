@@ -15,20 +15,45 @@ To solve the problem of manual and slow pure vision based liquid level measureme
    		 DisAdvantages:
    			 1. Not adaptive
    			 2. Extensive tuning of thresholds etc
-   			 3. Less effective in different environments
-		
-   	 2. Deep Learning based solution
-   		 Adv:
-   			 1. State-of-the-art performance
-   			 2. They can learn features and representations directly from data
-   			 3. More flexible and adaptable in variations in the objects
-   		 DisAdv:
-   			 1. They require large amount of labeled data to train effectively
-   			 2. Computationally expensive
-   			 3. Prone to over-fitting in-case of noisy data
-   			 4. less likely to understand how they system is making decisions
-   			 5. They may struggle with rare
-		Demo
+   			 3. Less effective in different environments. 
+   			 4. Very difficult to detect transparent liquid.
+
+
+- Binary thresholding:
+![Screenshot](/yolov8_segmentation/images/gray-binary.png)
+
+- Adaptive mean and Gaussian thresholding:
+![Screenshot](/yolov8_segmentation/images/thresholding.png)
+
+- Sobel Edge Detection
+![Screenshot](/yolov8_segmentation/images/sobel.png)
+
+- Laplacian
+![Screenshot](/yolov8_segmentation/images/laplacian.png)
+
+- Canny Edge Detection
+![Screenshot](/yolov8_segmentation/images/canny-edges.png)
+
+- Final detection of liquid
+![Screenshot](/yolov8_segmentation/images/classical-output.png)
+
+
+
+
+
+
+2. Deep Learning based solution
+         Advantages:
+             1. State-of-the-art performance
+             2. They can learn features and representations directly from data
+             3. More flexible and adaptable in variations in the objects
+         DisAdvantages:
+             1. They require large amount of labeled data to train effectively
+             2. Computationally expensive
+             3. Prone to over-fitting in-case of noisy data
+             4. less likely to understand how they system is making decisions
+             5. They may struggle with rare
+     Demo
 
 
 ## C. Methodology
