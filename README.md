@@ -136,14 +136,13 @@ In Conclusion, we have firstly tried to detect and measure the liquid level usin
 
 
 
-
-
-
-
-
-
 ## Timeline
--TODO
+1. More Research on related work done (2-Weeks) - done
+2. Create dataset (Taking images and doing annotations) (1-Weeks) - done
+3. Train the deep learning model (0.5-Week) - done
+4. Devise an algorithm for measuring exact level of liquid in the container (2-Weeks) - done
+5. Test, evaluate and Optimize the system, Deploy (1.5-Week) - done
+
 
 ## Technologies
 1. Deep Learning Model (e.g. YOLOv8)
